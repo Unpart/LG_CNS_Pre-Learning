@@ -1,0 +1,77 @@
+[LG CNS 6기] 1일차 TIL + 웹 서비스 아키텍처 오버뷰 및 인프라/프레임워크 기초
+
+🎓 오늘의 학습 범위:
+
+🔹 Step 1. 웹 서비스 이해
+- [ ]  📺 웹 서비스 이해 1강 - 기본 개념
+- [ ]  📺 웹 서비스 이해 2강 - 클라이언트와 서버
+
+📌 오늘의 학습 키워드
+
+Layered Architecture (Controller-Service-Repository)
+
+Web Server vs WAS 분리 목적
+
+JDBC to ORM (JPA/MyBatis) 패러다임 변화
+
+RESTful API 명세 (Swagger)
+
+RDBMS vs NoSQL
+
+📝 공부한 내용 본인의 언어로 정리하기
+
+1. 웹 서비스 파이프라인과 API Contract
+
+포지션별 R&R 및 아키텍처 관점:
+
+FE (Front-End): 단순히 화면을 그리는 것을 넘어, CSR(Client-Side Rendering) 환경에서 클라이언트의 상태를 관리하고 백엔드 API와 비동기 통신을 수행하는 UI/UX 계층.
+
+BE (Back-End): 핵심 비즈니스 로직 처리, 트랜잭션 관리, 데이터 영속성(Persistence)을 담당.
+
+DevOps: CI/CD 파이프라인을 구축하여 개발된 애플리케이션의 빌드, 테스트, 배포를 자동화하고 인프라(서버, 컨테이너 등)를 운영.
+
+API (Application Programming Interface)와 Swagger:
+
+FE와 BE가 분리된 모던 웹 아키텍처에서는 두 시스템 간의 통신 규약(Contract)이 필수적이다.
+
+이를 문서화하고 테스트할 수 있게 해주는 툴이 Swagger이며, 프로젝트 초기 설계 단계에서 API Endpoint, Request/Response DTO 명세를 확립해야 병렬적인 개발(Agile)이 가능하다.
+
+2. 엔터프라이즈 웹 인프라 및 프레임워크 딥다이브
+
+Web Server vs WAS (Web Application Server) 분리 아키텍처
+
+Web Server (Apache, Nginx): HTML, CSS, JS, Image 등 정적(Static) 리소스를 클라이언트에 직접 제공.
+
+WAS (Tomcat, WebLogic, JEUS): DB 조회나 다양한 로직 처리가 요구되는 동적(Dynamic) 컨텐츠 제공. (내부에 Web Container 내장)
+
+💡 트러블슈팅/고민 (왜 분리하는가?): 학교 프로젝트에서는 Spring Boot에 내장된 Tomcat(WAS)만으로 정적/동적 처리를 모두 수행했지만, 실무에서는 부하 분산(Load Balancing)과 보안(Reverse Proxy)을 위해 Nginx 같은 Web Server를 앞단에 두고 WAS를 은닉하는 구조를 가져간다는 점을 다시 한번 리마인드했다. 정적 리소스 처리를 앞단에서 끊어주어 WAS는 순수 비즈니스 로직에만 리소스를 집중할 수 있게 한다.
+
+Spring Layered Architecture & DB 통신
+
+3계층 구조: Controller(요청 매핑 및 응답) -> Service(비즈니스 로직 및 트랜잭션 처리) -> Repository(데이터 영속성 처리)로 관심사(SoC)를 분리하여 유지보수성을 높인다.
+
+DB Connection의 진화:
+
+과거에는 JDBC를 통해 Connection 맺기, 쿼리 작성, 예외 처리 등 보일러플레이트 코드가 매우 많았다.
+
+이를 개선하기 위해 쿼리와 코드를 매핑하는 SQL Mapper(MyBatis)가 등장했고, 최근에는 객체 지향 패러다임과 관계형 DB 간의 패러다임 불일치(Impedance Mismatch)를 해결하기 위해 ORM (JPA/Hibernate)을 도입하는 추세다.
+
+데이터베이스 (RDBMS vs NoSQL)
+
+RDBMS: 데이터 무결성과 ACID 트랜잭션이 중요할 때 사용 (Oracle, MySQL).
+
+NoSQL: 스키마리스 구조로 유연하며, 대용량 트래픽에 대한 Scale-out이 유리할 때 사용 (MongoDB, Redis, Cassandra 등).
+
+💡 오늘의 회고
+
+전공 수업에서 파편적으로 배웠던 네트워크 통신(HTTP/HTTPS), 운영체제의 프로세스, DB 설계론들이 '엔터프라이즈 웹 아키텍처'라는 하나의 큰 흐름으로 연결되는 것을 체감하며 높은 몰입도를 유지했다.
+
+개념적으로 알고 있는 Web Server와 WAS의 구조를 직접 눈으로 확인하기 위해, 내일은 도커(Docker)를 활용해 Nginx와 Spring Boot(내장 Tomcat)를 리버스 프록시 형태로 연동해 보는 간단한 실습 인프라를 구성해 보아야겠다.
+
+🏷️ 태그
+
+- [ ]  #LGCNS
+- [ ]  #LGCNS6기
+- [ ]  #LGCNS6기TIL
+- [ ]  #내일배움카드
+- [ ]  #K-DT
