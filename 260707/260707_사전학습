@@ -1,0 +1,71 @@
+[LG CNS 6기] 2일차 TIL + HTTP 네트워크 기초 및 모던 프론트엔드 아키텍처(SPA)
+
+📌 오늘의 학습 키워드
+
+HTTP Methods & RESTful API 설계 (CRUD 매핑)
+
+Request/Response 파이프라인 (Header vs Body)
+
+HTTP 상태 코드 (Status Codes: 2xx, 4xx, 5xx)
+
+SPA (Single Page Application)와 CSR (Client-Side Rendering)
+
+Framework vs Library (IoC: 제어의 역전)
+
+📝 공부한 내용 본인의 언어로 정리하기
+
+1. 백엔드 개발 언어와 네트워크 통신 (HTTP & REST)
+
+개발 언어의 생태계와 목적성:
+
+파이썬(Python)은 데이터 사이언스와 AI 분야에 특화된 반면, 자바(Java)는 엔터프라이즈급 비즈니스 로직과 대규모 트래픽을 처리하는 상용 웹 서비스(금융, 공공 등)에 최적화되어 있다. 목적에 맞는 기술 스택(IDE 포함) 선정이 우선되어야 한다.
+
+RESTful API와 HTTP Methods:
+
+서버와 클라이언트 간의 데이터 교환(API)은 기본적으로 HTTP 프로토콜을 따른다. 이때, 사용자의 행위(CRUD)를 URL에 동사로 표현하는 것이 아니라 HTTP Method로 명세하는 것이 RESTful한 설계의 핵심이다.
+
+POST (Create), GET (Read), PUT/PATCH (Update), DELETE (Delete)
+
+URL은 행위가 아닌 '자원(Resource)'을 명사형 복수(e.g., /users/{id})로 계층적으로 표현해야 한다.
+
+HTTP Request & Response 구조:
+
+Header: 데이터의 메타정보(Content-Type, 인증 토큰 등)를 담는 영역.
+
+Body (Payload): 실제 전송되는 데이터. 모던 웹에서는 주로 이기종 시스템 간 호환성이 뛰어나고 경량화된 JSON (JavaScript Object Notation) 포맷을 표준으로 사용한다.
+
+Status Code: 서버의 응답 상태를 나타낸다. 2xx는 성공, 4xx는 클라이언트 오류(권한, 잘못된 문법 등), 5xx는 서버 내부 오류(비즈니스 로직 에러, DB 연결 실패 등)를 직관적으로 알려준다.
+
+2. 모던 프론트엔드 생태계와 SPA 아키텍처
+
+웹의 3요소와 반응형 디자인 (Responsive Web):
+
+HTML (시맨틱 마크업을 통한 DOM 뼈대), CSS (스타일링), JavaScript (DOM 조작 및 동적 이벤트 제어).
+
+멀티 디바이스 환경을 지원하기 위해 CSS의 Media Query를 활용한 반응형 웹이 필수적이며, Bootstrap 같은 UI 프레임워크가 이를 돕는다.
+
+SPA (Single Page Application)의 등장:
+
+과거처럼 페이지 이동 시마다 서버에서 완성된 HTML을 내려받는 SSR(Server-Side Rendering) 방식에서 벗어나, 최초 한 번만 페이지를 로드하고 이후에는 필요한 데이터(JSON)만 서버와 비동기로 통신하여 브라우저에서 컴포넌트를 갈아 끼우는 CSR(Client-Side Rendering) 방식이 모던 웹의 표준인 SPA다.
+
+💡 트러블슈팅/고민 (SPA의 트레이드오프): SPA는 화면 전환이 빠르고 서버 부하를 줄여주는 압도적인 UX 장점이 있지만, 초기 로딩 속도(Initial Load Time)가 느리고 SEO(검색엔진 최적화)에 불리하다는 단점이 있다. 실무에서는 이를 극복하기 위해 Next.js나 Nuxt.js 같은 프레임워크를 도입해 SSR을 혼합하는 방식을 채택한다는 점을 상기했다.
+
+Framework vs Library (제어의 역전, IoC):
+
+React (Library): 렌더링과 UI 컴포넌트 관리에 집중하며, 라우팅이나 상태 관리는 개발자가 주도적으로 라이브러리를 조합해 사용한다. (개발자가 흐름을 제어)
+
+Vue (Framework): 애플리케이션의 뼈대와 흐름(라우팅, 상태관리 등)을 툴 자체가 제공한다. 즉, 제어의 역전(IoC, Inversion of Control)이 일어나 프레임워크가 개발자의 코드를 호출하는 형태다.
+
+💡 오늘의 회고
+
+전공 수업 중 '컴퓨터 네트워크' 과목에서 배웠던 HTTP 헤더 구조와 상태 코드들이, 실제 실무 웹 개발에서 프론트와 백엔드가 JSON 기반의 REST API로 소통하는 규약으로 어떻게 직결되는지 깨달으며 매우 깊게 몰입할 수 있었다.
+
+라이브러리와 프레임워크의 차이인 '제어의 역전(IoC)' 개념이 백엔드의 Spring Framework에서도 동일하게 적용되는 핵심 개념이므로, 내일은 Spring의 DI(Dependency Injection)와 IoC 컨테이너가 어떻게 동작하는지 CS 관점에서 추가로 정리해 보아야겠다.
+
+🏷️ 태그
+
+- [ ]  #LGCNS
+- [ ]  #LGCNS6기
+- [ ]  #LGCNS6기TIL
+- [ ]  #내일배움카드
+- [ ]  #K-DT
