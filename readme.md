@@ -14,8 +14,8 @@
 - **🔹 Step 2. 협업을 위한 필수 무기, Git**
     - [x]  📺 Git 1강 - 버전 관리란? (26_07_09)
     - [x]  📺 Git 2강 - Git 설치 및 초기 세팅 (26_07_09)
-    - [ ]  📺 Git 3강 - Commit 이해하기
-    - [ ]  📺 Git 4강 - Branch의 개념과 활용
+    - [x]  📺 Git 3강 - Commit 이해하기 (26_07_10)
+    - [x]  📺 Git 4강 - Branch의 개념과 활용 (26_07_10)
     - [ ]  📺 Git 5강 - Merge와 충돌 해결
     - [ ]  📺 Git 6강 - Github 연동 및 원격 저장소
     - [ ]  📺 Git 7강 - Push & Pull 실습
