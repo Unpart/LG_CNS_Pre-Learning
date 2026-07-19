@@ -28,7 +28,7 @@
     - [x]  📺 Java 5강 - 객체지향 프로그래밍 기초 (26_07_17)
     - [x]  📺 Java 6강 - 클래스와 인스턴스 (26_07_18)
 - **🔹 Step 4. 생동감 있는 화면, 프론트엔드 (React)**
-    - [ ]  📺 React 1강 - React 소개 및 세팅
+    - [x]  📺 React 1강 - React 소개 및 세팅 (26_07_19)
     - [ ]  📺 React 2강 - JSX 문법 이해
     - [ ]  📺 React 3강 - Component와 Props
     - [ ]  📺 React 4강 - State와 생명주기
