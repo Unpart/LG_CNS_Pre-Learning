@@ -30,6 +30,6 @@
 - **🔹 Step 4. 생동감 있는 화면, 프론트엔드 (React)**
     - [x]  📺 React 1강 - React 소개 및 세팅 (26_07_19)
     - [x]  📺 React 2강 - JSX 문법 이해 (26_07_20)
-    - [ ]  📺 React 3강 - Component와 Props
+    - [x]  📺 React 3강 - Component와 Props (26_07_21)
     - [ ]  📺 React 4강 - State와 생명주기
     - [ ]  📺 React 5강 - Event 처리와 활용
