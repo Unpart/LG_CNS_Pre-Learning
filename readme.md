@@ -31,5 +31,5 @@
     - [x]  📺 React 1강 - React 소개 및 세팅 (26_07_19)
     - [x]  📺 React 2강 - JSX 문법 이해 (26_07_20)
     - [x]  📺 React 3강 - Component와 Props (26_07_21)
-    - [ ]  📺 React 4강 - State와 생명주기
+    - [x]  📺 React 4강 - State와 생명주기 (26_07_22)
     - [ ]  📺 React 5강 - Event 처리와 활용

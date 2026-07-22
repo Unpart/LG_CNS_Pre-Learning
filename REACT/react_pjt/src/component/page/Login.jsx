@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 import '../css/Login.css';
 
 const Login = () => {
@@ -6,11 +7,38 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
 
         e.preventDefault();
         
         console.log('btn click event');
+
+        if (!userId || !password) {
+            setError("아이디와 비밀번호를 모두 입력해주세요.");
+            return;
+        }
+
+        // if (userId === "admin" && password === "1234") {
+        //     alert("✅ 로그인 성공!");
+        //     setError("");
+        // } else {
+        //     setError("❌ 아이디 또는 비밀번호가 올바르지 않습니다.");
+        // }
+
+        // 로그인 API 요청
+        // const response = await axios.post("http://localhost:8080/api/login", {
+        //     username: userId,
+        //     password: password,
+        // });
+
+        // const token = response.data.token;
+        // localStorage.setItem("token", token);
+
+        alert("✅ 로그인 성공!");
+        setError("");
+
+        // react-router-dom 이동 vs window.location.href
+        
     }
 
     return (
