@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../css/Login.css';
 
 const Login = () => {
     const [userId, setUserId] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const moveUrl = useNavigate();
 
     const handleSubmit = async (e) => {
 
@@ -38,6 +40,7 @@ const Login = () => {
         setError("");
 
         // react-router-dom 이동 vs window.location.href
+        moveUrl('/welcome', { state: { username: userId } });
         
     }
 
